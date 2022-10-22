@@ -245,14 +245,22 @@ p img {
 }
 .publicaciones{
     display: flex;
-    width: 100%;
+    width: 800px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 800px;
     flex-direction: row;
     margin-top: 38px;
     padding-top: 40px ;
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+
 }
-.row{
-    width: 334px!important;
+.contenedorPublicaciones{
+    margin-left: 30px;
 }
+
 .contenido{
     display: flex;
     flex-direction: column;

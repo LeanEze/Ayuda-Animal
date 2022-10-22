@@ -1,0 +1,26 @@
+{% extends "APP/padre.html" %}
+{% load static %}
+{% block Contenido %}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">{{articulo.title}}</h1>
+        <p class="lead text-muted">{{articulo.short_content}}</p>
+        <div class="imgPublicacion">{{articulo.content_upload | safe}}</div>
+       
+      </div>
+    </div>
+  </section>
+  <main class="flex-shrink-0">
+    <div class="container">
+      <div style="text-align:center;">
+      </div>
+      <div style="padding-top: 2em;">
+       {{articulo.content | safe }}
+      </div>
+    </div>
+  </main>
+
+
+{% endblock %}

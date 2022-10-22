@@ -8,7 +8,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from APP.models import Articulo, Publicador
+from APP.models import Articulo, Publicador, Portal
 from APP.views import BaseView
 from APP_PANEL.forms import CustomAuthenticationForm, ArticleForm
 
@@ -102,3 +102,13 @@ class UserUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 def mostrar_login(request):
     return render(request, "APP_PANEL/panel_login.html", {})
+
+
+class ArticleDetailView(DetailView):
+
+    model = Articulo
+    template_name ="APP_PANEL/article_detail.html"
+    
+
+    def test_func(self):
+        return self.request.user.id == int(self.kwargs['pk'])

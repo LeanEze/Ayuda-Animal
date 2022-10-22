@@ -5,24 +5,15 @@
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 {% if user.is_authenticated %}
 <h1>Add post</h1>
-<div class="container">
+
 <div class="publicaciones">
 {% for articulo in object_list %}
-
-<div class="contenedorPublicaciones">
-    <div class="contenedorPublicacionesSub">
+    <div class="contenedorPublicaciones">
         <div class="imgPublicacion">{{articulo.content_upload | safe}}</div>
-      
-
       <h2 class="fw-normal">{{articulo.title}}</h2>
       <p>{{articulo.content | safe}}</p>
-      <p><a class="btn btn-secondary" href="#">Ver detalles »</a></p>
+      <p><a class="btn btn-secondary" href="{%url 'article-detail' articulo.id%}">Ver detalles »</a></p>
     </div>
-</div>
-
-</div>
 {% endfor %}
-</div>
-</div>
 {%endif%}
 {% endblock %}

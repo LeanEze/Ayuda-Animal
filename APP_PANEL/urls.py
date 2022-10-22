@@ -1,6 +1,6 @@
 from django.urls import path, include
 from APP_PANEL import views
-from APP_PANEL.views import ArticleCreateView, PanelLogin, PanelLogout, SignUpView, UserProfile, UserUpdate,detail, dummy,PanelView, ArticleUpdateView,ArticleDeleteView 
+from APP_PANEL.views import ArticleDetailView,ArticleCreateView, PanelLogin, PanelLogout, SignUpView, UserProfile, UserUpdate,detail, dummy,PanelView, ArticleUpdateView,ArticleDeleteView 
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -15,6 +15,7 @@ urlpatterns = [
     path('article/create', ArticleCreateView.as_view(), name ="article-create" ),
     path('article/<pk>/update', ArticleUpdateView.as_view(), name ="article-update" ),
     path('article/<pk>/delete', ArticleDeleteView.as_view(), name ="article-delete" ),
+    path(r'^articleDetail/(?P<pk>\d+)$', views.ArticleDetailView.as_view(), name='article-detail'),
     path("login/", PanelLogin.as_view(), name="panel-login"),
     path("logout/", PanelLogout.as_view(), name="panel-logout"),
     path("signup/", SignUpView.as_view(), name="panel-signup"),
