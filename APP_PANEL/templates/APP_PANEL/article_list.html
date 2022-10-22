@@ -3,17 +3,17 @@
 {% block Contenido %}
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
-{% if user.is_authenticated %}
-<h1>Add post</h1>
-
 <div class="publicaciones">
 {% for articulo in object_list %}
     <div class="contenedorPublicaciones">
         <div class="imgPublicacion">{{articulo.content_upload | safe}}</div>
-      <h2 class="fw-normal">{{articulo.title}}</h2>
-      <p>{{articulo.content | safe}}</p>
-      <p><a class="btn btn-secondary" href="{%url 'article-detail' articulo.id%}">Ver detalles »</a></p>
+      <h2 class="fw-normal text-center">{{articulo.title}}</h2>
+      <div class="texto text-center">
+      <p class="">{{articulo.content | safe}}</p>
+    </div>
+    <div class="botonDetalles text-center"><p><a class="btn btn-secondary" href="{%url 'article-detail' articulo.id%}">Ver detalles »</a></p></div>
+      
     </div>
 {% endfor %}
-{%endif%}
+</div>
 {% endblock %}
