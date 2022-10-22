@@ -44,7 +44,7 @@ def detail(request):
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Articulo
-    fields = ['title' , 'content', 'author', 'image', 'is_headline', 'image', 'date_published']
+    fields = ['title' , 'content','content_upload', 'author', 'image', 'is_headline', 'image', 'date_published']
     template_name = "APP_PANEL/article_form.html"
     success_url = reverse_lazy("panel-page")
 

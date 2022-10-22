@@ -56,10 +56,19 @@ label[for="id_author"]:after{
     left: 0;
     content:'Autor: ';
 }
-label[for="id_date_published"]{
+label[for="id_content_upload"]{
     visibility: hidden;
     position: relative;
 }
+label[for="id_content_upload"]:after{
+    visibility: visible;
+    position: absolute;
+    margin-right: 10px;
+    top: 0;
+    left: 0;
+    content:'Cargar imagen: ';
+}
+
 label[for="id_date_published"]:after{
     visibility: visible;
     position: absolute;
@@ -69,7 +78,11 @@ label[for="id_date_published"]:after{
     content:'Fecha: ';
 }
 
-
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: -500px;
+}
 .carousel{
     margin-top: 85px;
 }
@@ -149,6 +162,11 @@ label[for="id_date_published"]:after{
     border: none;
 
 }
+p img {
+    border-radius: 50%;
+    width: 140px!important;
+    height: 140px!important;
+}
 
 .form-group{
     display: flex;
@@ -161,6 +179,7 @@ label[for="id_date_published"]:after{
     
 }
 .loginform{
+    margin-top: 300px;
     width: 700px;
     padding: 20px;
 }
@@ -226,10 +245,14 @@ label[for="id_date_published"]:after{
 }
 .publicaciones{
     display: flex;
-    flex-direction: column;
-    margin-top: 50px;
+    width: 100%;
+    flex-direction: row;
+    margin-top: 38px;
+    padding-top: 40px ;
 }
-
+.row{
+    width: 334px!important;
+}
 .contenido{
     display: flex;
     flex-direction: column;

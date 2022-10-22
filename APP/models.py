@@ -2,6 +2,7 @@ from django.db import models
 from django import forms
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from datetime import datetime   
 
 
@@ -20,6 +21,7 @@ class Articulo(models.Model):
     title = models.CharField(max_length=100)
     short_content = models.CharField(max_length=180)
     content = RichTextField(blank= True, null=True)
+    content_upload = RichTextUploadingField(blank= True, null=True)
     image = models.ImageField(upload_to="articles", null=True, blank=True)
     author = models.ForeignKey(Publicador, on_delete=models.DO_NOTHING)
     is_headline= models.BooleanField()

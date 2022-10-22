@@ -11,5 +11,5 @@ class CustomAuthenticationForm(AuthenticationForm):
 class ArticleForm(ModelForm):
     class Meta:
         model= Articulo
-        fields = ['title','content']
+        fields = ['title','content','content_upload']
 
