@@ -1,0 +1,17 @@
+{% extends "APP/padre.html" %}
+{% load static %}
+{% block Contenido %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+{% if user.is_authenticated %}
+<h1>Add post</h1>
+<div class="publicaciones">
+{% for articulo in object_list %}
+<div class="articulo">{{articulo.title}} <div class="contenido1">{{articulo.content | safe}}</div> 
+<img src="{{articulo.image}}" alt="">
+
+</div>
+{% endfor %}
+</div>
+{%endif%}
+{% endblock %}

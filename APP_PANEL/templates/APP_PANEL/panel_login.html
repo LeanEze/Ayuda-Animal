@@ -1,0 +1,28 @@
+{% extends "APP/padre.html" %}
+{% load static %}
+{% block Contenido %}
+
+
+   <div class="contenido">
+      <img class="" src="{% static 'APP/css/ayudaanimal.png' %}"  alt="" width="120" height="100">
+      <h1 class="">Ingresar Usuario</h1>
+    
+  <div class="form2">
+
+    <form action="" method="POST">{% csrf_token %}
+    
+        <ul>
+
+            <table>
+        
+              {{form}}
+        
+            
+            </table>
+              <button class="btn btn-primary botoningresar" type="submit">Entrar</button>
+        </ul>
+       
+  </div>
+      </form>
+    </div>
+{% endblock %}
