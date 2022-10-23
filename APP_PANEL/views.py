@@ -98,6 +98,9 @@ class UserUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user.id == int(self.kwargs['pk'])
 
+def adopcion(request):
+    article = Articulo.objects.all()
+    return render(request,'APP_PANEL/adoption.html',{'article': article})
 
 
 def mostrar_login(request):
