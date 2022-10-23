@@ -8,6 +8,12 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
+              <div class="gatillo" id="gatillo">
+              <div class="adoptalos" id="adoptalos">
+              <H1 class="h1flotante">ADOPTALOS, ELLOS TE NECESITAN</H1>
+              <a href="{%url 'adopcion'%}"><input class="boton5" type="button" value="Adoptar>>"></a>
+            </div>
+          </div>
               <div class="vacio">
                 <img class="imagenCarousel" src="{% static 'APP/css/perro3.jpg' %}" alt="" class="d-block w-100 imagenes" height="700" >
               </div>
@@ -30,7 +36,7 @@
         <div class="container marketing py-4">
 
             <!-- Three columns of text below the carousel -->
-            <div class="row">
+            <div class="row" id="row">
               <div class="col-lg-4 circulos perro">
                   <img class="bd-placeholder-img rounded-circle" src="{% static 'APP/css/perro.jpg' %}" alt="" width="140px" height="140px">
         
@@ -53,6 +59,8 @@
 
           </div>
         </div>
-
-      
+        <script src="{% static 'APP/js/ScrollMagic.min.js' %}"></script>
+        <script src="{% static 'APP/js/scrollEfects.js' %}"></script>
+        <script src="{% static 'APP/js/debug.addIndicators.min.js' %}"></script>
+        
         {% endblock %}
