@@ -3,7 +3,14 @@
 {% block Contenido %}
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+<div class="filtro container">
+  <a>Filtro: </a>
+  <a href="{%url 'adopcion'%}">Todos</a>
+  <a href="{%url 'Hembra'%}">Hembra</a>
+  <a href="{%url 'Macho'%}">Macho</a></div>
+
 <div class="publicaciones container">
+  
 {% for articulo in article %}
     <div class="contenedorPublicaciones">
         <div class="imgPublicacion">{{articulo.content_upload | safe}}</div>

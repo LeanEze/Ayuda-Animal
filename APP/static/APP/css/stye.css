@@ -260,12 +260,27 @@ p img {
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
-    margin-top: 38px;
     padding-top: 80px ;
     background-color: white;
     margin-right: auto;
     margin-left: auto;
 
+}
+
+.filtro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-radius: 40px;
+    background-color: #f2f2f2;
+    margin-top: 86px;
+}
+.filtro a{
+    margin-left: 10px;
+}
+.fitro p{
+    align-self: center;
 }
 .imgPublicacion{
     float: left;

@@ -1,0 +1,24 @@
+{% extends "APP/padre.html" %}
+{% load static %}
+{% block Contenido %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+<div class="filtro container">
+    <a>Filtro: </a>
+    <a href="{%url 'adopcion'%}">Todos</a>
+    <a href="{%url 'Hembra'%}">Hembra</a>
+    <a href="{%url 'Macho'%}">Macho</a></div>
+<div class="publicaciones container">
+{% for Macho in macho %}
+    <div class="contenedorPublicaciones">
+        <div class="imgPublicacion">{{Macho.content_upload | safe}}</div>
+      <h2 class="fw-normal text-center">{{Macho.title}}</h2>
+      <div class="texto text-center">
+      <p class="">{{Macho.content | safe}}</p>
+    </div>
+    <div class="botonDetalles text-center"><p><a class="btn btn-secondary" href="">Ver detalles »</a></p></div>
+      
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

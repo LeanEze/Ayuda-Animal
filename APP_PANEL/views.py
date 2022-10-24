@@ -44,7 +44,7 @@ def detail(request):
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Articulo
-    fields = ['title' , 'content','content_upload', 'author', 'image', 'is_headline', 'image', 'date_published']
+    fields = ['title' , 'content','content_upload', 'author', 'image', 'is_headline', 'image','genero', 'date_published']
     template_name = "APP_PANEL/article_form.html"
     success_url = reverse_lazy("panel-page")
 
@@ -106,7 +106,13 @@ def adopcion(request):
 def mostrar_login(request):
     return render(request, "APP_PANEL/panel_login.html", {})
 
+def macho(request):
+    macho = Articulo.objects.filter(genero='macho')
+    return render(request,'APP_PANEL/filtromacho.html' ,{'macho': macho})
 
+def hembra(request):
+    hembra = Articulo.objects.filter(genero='hembra')
+    return render(request,'APP_PANEL/filtrohembra.html' ,{'hembra': hembra})
 class ArticleDetailView(DetailView):
 
     model = Articulo

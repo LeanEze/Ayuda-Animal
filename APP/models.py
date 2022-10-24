@@ -17,6 +17,11 @@ class Publicador(models.Model):
         return f"{self.user.username}"
 
 
+GENERO_CHOICES = (
+    ('macho','Macho'),
+    ('hembra', 'Hembra'),
+)
+
 class Articulo(models.Model):
     title = models.CharField(max_length=100)
     short_content = models.CharField(max_length=180)
@@ -24,6 +29,7 @@ class Articulo(models.Model):
     content_upload = RichTextUploadingField(blank= True, null=True)
     image = models.ImageField(upload_to="articles", null=True, blank=True)
     author = models.ForeignKey(Publicador, on_delete=models.DO_NOTHING)
+    genero = models.CharField(max_length=6, choices=GENERO_CHOICES, default='Macho')
     is_headline= models.BooleanField()
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)

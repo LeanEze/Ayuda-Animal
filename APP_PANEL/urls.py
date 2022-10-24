@@ -25,5 +25,7 @@ urlpatterns = [
     path("user/<pk>/edit", UserUpdate.as_view(), name="user-update"),
     path('ckeditor/', include('ckeditor_uploader.urls')),    
     path('adopcion/', views.adopcion, name='adopcion'),
+    path('filtro/' ,views.macho, name="Macho"),
+    path('filtroh/' ,views.hembra, name="Hembra")
     ]
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
