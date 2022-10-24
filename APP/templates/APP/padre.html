@@ -39,7 +39,7 @@
                 <a class="nav-link" href= "{%url 'contactenos'%}">Contactenos</a>
               </li>
               {% if request.user.is_authenticated %}
-              <div class="nav-item cerrar">              <a class="boton2" href="{%url 'article-create'%}">Edición<img class="botonimg2" src="{% static 'APP/css/hocico.png' %}" alt="" width="30px"></a>
+              <div class="nav-item cerrar">              <a class="boton2" href="{%url 'panel-page'%}">Edición<img class="botonimg2" src="{% static 'APP/css/hocico.png' %}" alt="" width="30px"></a>
 
                 <a class="boton1" href="{%url 'panel-logout'%}">Cerrar sesión <img class="botonimg1" src="{% static 'APP/css/hueso1.png' %}" alt="" width="40px"></a></div>
               {%endif%}

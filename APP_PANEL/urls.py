@@ -26,6 +26,9 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),    
     path('adopcion/', views.adopcion, name='adopcion'),
     path('filtro/' ,views.macho, name="Macho"),
-    path('filtroh/' ,views.hembra, name="Hembra")
+    path('filtroh/' ,views.hembra, name="Hembra"),
+    path('chico/' ,views.chico, name="Chico"),
+    path('mediano/' ,views.mediano, name="Mediano"),
+    path('grande/' ,views.grande, name="Grande"),
     ]
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

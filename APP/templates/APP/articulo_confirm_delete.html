@@ -1,0 +1,20 @@
+{% extends "APP/padre.html" %}
+{% block Contenido %}
+<div class="eliminar container">
+  <table>
+      <form method="post">{% csrf_token %}
+
+          ¿Estas seguro que desea eliminar el articulo "{{ object.title }}"?
+
+          <input class="btn btn-primary" type="submit" value="Eliminar"/>
+
+      </form>
+
+      <p>
+          <a href="{% url 'panel-page' %}">Regresar</a>
+      </p>
+
+  </table>   
+</div>
+{% load static %}
+  {% endblock %}

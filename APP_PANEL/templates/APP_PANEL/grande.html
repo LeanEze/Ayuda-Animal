@@ -4,26 +4,24 @@
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 <div class="filtro container">
-  <a>Filtro: </a>
-  <a href="{%url 'adopcion'%}">Todos</a>
-  <a href="{%url 'Hembra'%}">Hembra</a>
-  <a href="{%url 'Macho'%}">Macho</a>
-  <div class="size">
+    <a>Filtro: </a>
+    <a href="{%url 'adopcion'%}">Todos</a>
+    <a href="{%url 'Hembra'%}">Hembra</a>
+    <a href="{%url 'Macho'%}">Macho</a>
+<div class="size">
     <a href="{%url 'Chico'%}">Chico</a>
     <a href="{%url 'Mediano'%}">Mediano</a>
     <a href="{%url 'Grande'%}">Grande</a>
 </div></div>
-
 <div class="publicaciones container">
-  
-{% for articulo in article %}
+{% for Grande in grande %}
     <div class="contenedorPublicaciones">
-        <div class="imgPublicacion">{{articulo.content_upload | safe}}</div>
-      <h2 class="fw-normal text-center">{{articulo.title}}</h2>
+        <div class="imgPublicacion">{{Grande.content_upload | safe}}</div>
+      <h2 class="fw-normal text-center">{{Grande.title}}</h2>
       <div class="texto text-center">
-      <p class="">{{articulo.content | safe}}</p>
+      <p class="">{{Grande.content | safe}}</p>
     </div>
-    <div class="botonDetalles text-center"><p><a class="btn btn-secondary" href="{%url 'article-detail' articulo.id%}">Ver detalles »</a></p></div>
+    <div class="botonDetalles text-center"><p><a class="btn btn-secondary" href="{%url 'article-detail' Grande.id%}">Ver detalles »</a></p></div>
       
     </div>
 {% endfor %}

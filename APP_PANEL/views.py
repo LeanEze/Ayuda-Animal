@@ -44,14 +44,14 @@ def detail(request):
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Articulo
-    fields = ['title' , 'content','content_upload', 'author', 'image', 'is_headline', 'image','genero', 'date_published']
+    fields = ['title' , 'content','content_upload', 'author', 'image', 'is_headline', 'image','genero','size', 'date_published']
     template_name = "APP_PANEL/article_form.html"
     success_url = reverse_lazy("panel-page")
 
 
 class ArticleUpdateView(LoginRequiredMixin, BaseView, UpdateView):
     model = Articulo
-    fields = ['title', 'short_content', 'content', 'author', 'image', 'is_headline', 'image', 'date_published']
+    fields = ['title', 'content','content_upload', 'author', 'image', 'is_headline', 'image','genero','size', 'date_published']
     success_url = reverse_lazy('panel-page')
     
 
@@ -113,6 +113,21 @@ def macho(request):
 def hembra(request):
     hembra = Articulo.objects.filter(genero='hembra')
     return render(request,'APP_PANEL/filtrohembra.html' ,{'hembra': hembra})
+
+
+def chico(request):
+    chico = Articulo.objects.filter(size='chico')
+    return render(request,'APP_PANEL/chico.html',{'chico': chico})
+
+def mediano(request):
+    mediano = Articulo.objects.filter(size='mediano')
+    return render(request,'APP_PANEL/mediano.html',{'mediano': mediano})
+
+def grande(request):
+    grande = Articulo.objects.filter(size='grande')
+    return render(request,'APP_PANEL/grande.html',{'grande': grande})
+
+
 class ArticleDetailView(DetailView):
 
     model = Articulo

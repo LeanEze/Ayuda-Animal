@@ -3,7 +3,22 @@
 {% block Contenido %}
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
-<div class="publicaciones">
+<div class="filtro container">
+
+  <a>Filtro: </a>
+  <a href="{%url 'adopcion'%}">Todos</a>
+  <a href="{%url 'Hembra'%}">Hembra</a>
+  <a href="{%url 'Macho'%}">Macho</a>
+  <div class="size">
+    <a href="{%url 'Chico'%}">Chico</a>
+    <a href="{%url 'Mediano'%}">Mediano</a>
+    <a href="{%url 'Grande'%}">Grande</a>
+</div></div>
+  <div class="crear container"> 
+     <a href="{%url 'article-create'%}"><button class="btn btn-primary">Crear</button></a>
+  </div>
+<div class="publicaciones container">
+
 {% for articulo in object_list %}
     <div class="contenedorPublicaciones">
         <div class="imgPublicacion">{{articulo.content_upload | safe}}</div>
@@ -12,7 +27,8 @@
       <p class="">{{articulo.content | safe}}</p>
     </div>
     <div class="botonDetalles text-center"><p><a class="btn btn-secondary" href="{%url 'article-detail' articulo.id%}">Ver detalles »</a></p></div>
-      
+    <a class="btn btn-secondary" href="{%url 'article-delete' articulo.id%}">Eliminar»</a>
+    <a class="btn btn-secondary" href="{%url 'article-update' articulo.id%}">Editar»</a>
     </div>
 {% endfor %}
 </div>
