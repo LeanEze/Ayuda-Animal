@@ -1,0 +1,1 @@
+web: gunicorn MTV.wsgi --log-file -
