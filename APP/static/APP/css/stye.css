@@ -78,6 +78,15 @@ label[for="id_date_published"]:after{
     content:'Fecha: ';
 }
 
+
+label[for="id_size"]{
+    visibility: hidden;
+    position: relative;
+}
+label[for="id_size"]:after{
+    visibility: visible;
+    content:'Tamaño: ';
+}
 .carousel{
     margin-top: 85px;
 }

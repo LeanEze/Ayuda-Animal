@@ -8,8 +8,9 @@ class CustomAuthenticationForm(AuthenticationForm):
         self.fields['username'].label = 'Usuario'
         self.fields['password'].label = 'Contraseña'
 
-class ArticleForm(ModelForm):
-    class Meta:
-        model= Articulo
-        fields = ['title','content','content_upload']
 
+class CustomAuthenticationForm(AuthenticationForm):
+    def __init__(self, request=None, *args, **kwargs):
+        super().__init__(request=None, *args, **kwargs)
+        self.fields['username'].label = 'Usuario'
+        self.fields['password'].label = 'Contraseña'

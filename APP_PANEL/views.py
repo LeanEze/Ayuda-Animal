@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.shortcuts import render
@@ -10,7 +11,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from APP.models import Articulo, Publicador, Portal
 from APP.views import BaseView
-from APP_PANEL.forms import CustomAuthenticationForm, ArticleForm
+from APP_PANEL.forms import CustomAuthenticationForm
+from .filters import ListingFilter
 
 
 
@@ -26,20 +28,13 @@ class PanelView(LoginRequiredMixin, BaseView, ListView):
     template_name = "APP_PANEL/article_list.html"    
     context_object_name = "articles"
 
-
-def detail(request):
-    articulo = Articulo.objects.get(pk=2)
-
-    if request.method == 'POST':
-        form = ArticleForm(request.POST, instance=articulo)
-        if form.is_valid():
-            form.save()
-
-            return redirect('detail')
-    else:
-        form= ArticleForm(instance=Articulo)
-
-    return render(request, "APP_PANEL/article_list.html",{"articulo": articulo, "form": form})
+    def get_context_data(request):
+        article = Articulo.objects.all()
+        listing_filter = ListingFilter(request.GET , queryset=article)
+        context = {
+            'listing_filter': listing_filter
+            }
+        return render(request,'APP_PANEL/article_list.html', context)
 
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
@@ -52,12 +47,12 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
 class ArticleUpdateView(LoginRequiredMixin, BaseView, UpdateView):
     model = Articulo
     fields = ['title', 'content','content_upload', 'author', 'image', 'is_headline', 'image','genero','size', 'date_published']
-    success_url = reverse_lazy('panel-page')
+    success_url = reverse_lazy('adopcion')
     
 
 class ArticleDeleteView(LoginRequiredMixin, BaseView, DeleteView):
     model = Articulo 
-    success_url = reverse_lazy('panel-page')
+    success_url = reverse_lazy('adopcion')
     
 
 class PanelLogin(LoginView):
@@ -100,32 +95,15 @@ class UserUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 def adopcion(request):
     article = Articulo.objects.all()
-    return render(request,'APP_PANEL/adoption.html',{'article': article})
+    listing_filter = ListingFilter(request.GET , queryset=article)
+    context = {
+        'listing_filter': listing_filter
+    }
+    return render(request,'APP_PANEL/adoption.html', context)
 
 
 def mostrar_login(request):
     return render(request, "APP_PANEL/panel_login.html", {})
-
-def macho(request):
-    macho = Articulo.objects.filter(genero='macho')
-    return render(request,'APP_PANEL/filtromacho.html' ,{'macho': macho})
-
-def hembra(request):
-    hembra = Articulo.objects.filter(genero='hembra')
-    return render(request,'APP_PANEL/filtrohembra.html' ,{'hembra': hembra})
-
-
-def chico(request):
-    chico = Articulo.objects.filter(size='chico')
-    return render(request,'APP_PANEL/chico.html',{'chico': chico})
-
-def mediano(request):
-    mediano = Articulo.objects.filter(size='mediano')
-    return render(request,'APP_PANEL/mediano.html',{'mediano': mediano})
-
-def grande(request):
-    grande = Articulo.objects.filter(size='grande')
-    return render(request,'APP_PANEL/grande.html',{'grande': grande})
 
 
 class ArticleDetailView(DetailView):

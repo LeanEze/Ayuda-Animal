@@ -24,15 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w92wf(&1$$m7wafy^7u-b=ios)^u%c9-z#33jvpu550+65g80&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 #Esto es para heroku
 
-DEBUG = False
-
-ALLOWED_HOSTS = ["*"]
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 # Application definition
@@ -48,6 +45,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'APP.apps.AppConfig',
     'APP_PANEL.apps.PaneledicionConfig',
+    'django_filters',
 ]   
 
 MIDDLEWARE = [
@@ -141,15 +139,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor/"
 
-
-
-STATIC_TMP = os.path.join(BASE_DIR,  'staticfiles')
-os.makedirs(STATIC_ROOT, exist_ok=True)
-os.makedirs(STATIC_TMP, exist_ok=True)
-
-STATICFILES_DIRS= (
-    os.path.join(BASE_DIR, 'static')
-)
-
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

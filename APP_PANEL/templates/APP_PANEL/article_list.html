@@ -4,16 +4,11 @@
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 <div class="filtro container">
-
-  <a>Filtro: </a>
-  <a href="{%url 'adopcion'%}">Todos</a>
-  <a href="{%url 'Hembra'%}">Hembra</a>
-  <a href="{%url 'Macho'%}">Macho</a>
-  <div class="size">
-    <a href="{%url 'Chico'%}">Chico</a>
-    <a href="{%url 'Mediano'%}">Mediano</a>
-    <a href="{%url 'Grande'%}">Grande</a>
-</div></div>
+  <form method="get">
+    {{listing_filter.form}}
+    <button class="btn btn-sm btn-primary" type="submit">Filtrar</button>
+  </form>
+</div>
   <div class="crear container"> 
      <a href="{%url 'article-create'%}"><button class="btn btn-primary">Crear</button></a>
   </div>
