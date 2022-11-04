@@ -106,6 +106,7 @@ label[for="id_size"]:after{
 }
 .crear{
     padding-top: 20px;
+    border-radius: 20px 20px 0 0;
 }
 .ultimo{
     display: flex;
@@ -275,10 +276,10 @@ p img {
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
-    padding-top: 80px ;
     background-color: white;
     margin-right: auto;
     margin-left: auto;
+    border-radius: 20px 20px 0 0;
 
 }
 
@@ -289,7 +290,6 @@ p img {
     height: 50px;
     border-radius: 40px;
     background-color: #f2f2f2;
-    margin-top: 86px;
 }
 .filtro a{
     margin-left: 10px;
@@ -419,6 +419,28 @@ label{
 }
 
 
+#animales {
+    opacity: 0;
+    -webkit-transform: translateX(-40px);
+         -moz-transform: translateX(-40px);
+            -ms-transform: translateX(-40px);
+             -o-transform: translateX(-40px);
+                    transform: translateX(-40px);
+    -webkit-transition: all 0.6s ease-out;
+         -moz-transition: all 0.6s ease-out;
+            -ms-transition: all 0.6s ease-out;
+             -o-transition: all 0.6s ease-out;
+                    transition: all 0.6s ease-out;
+}
+#animales.visible {
+    opacity: 1;
+    -webkit-transform: none;
+         -moz-transform: none;
+            -ms-transform: none;
+             -o-transform: none;
+                    transform: none;
+}
+
 
 /* 
 donaciones */
@@ -476,6 +498,14 @@ donaciones */
   .botonsend{
     margin-top: 86px;
     padding-top: 30px;
+  }
+  .container_{
+    border-radius: 0 0 20px 20px;
+    padding-bottom: 30px;
+  }
+  .botoncrear{
+    padding-top: 20px;
+    border-radius: 20px 20px 0 0;
   }
   hr{
     margin-top: 30px;

@@ -1,7 +1,7 @@
 {% extends "APP/padre.html" %}
 {% load static %}
 {% block Contenido %}
-<div class="container botonsend">
+<div class="container botonsend container_">
   <hr>
   <h1>Adopcion</h1>
   <h3>Hola, en esta pestaña puedes conocer las historias de quienes estan esperando un nuevo hogar. </h3>
@@ -21,14 +21,16 @@
   </form>
 </div>
 {% if request.user.is_authenticated%}
-<div class="crear container"> 
+<div class="botoncrear container">
   <a href="{%url 'article-create'%}"><button class="btn btn-primary">Crear</button></a>
+<div class="crear container"> 
+  
 </div>
 {%endif%}
 <div class="publicaciones container">
   
 {% for listing in listing_filter.qs %}
-    <div class="contenedorPublicaciones">
+    <div class="contenedorPublicaciones" id="animales">
         <div class="imgPublicacion">{{listing.content_upload | safe}}</div>
       <h2 class="fw-normal text-center">{{listing.title}}</h2>
       <div class="texto text-center">
@@ -41,5 +43,9 @@
     {%endif%}
     </div>
 {% endfor %}
-</div>}
+</div>
+</div>
+<script src="{% static 'APP/js/ScrollMagic.min.js' %}"></script>
+        <script src="{% static 'APP/js/scrollEfects.js' %}"></script>
+        <script src="{% static 'APP/js/debug.addIndicators.min.js' %}"></script>
 {% endblock %}
