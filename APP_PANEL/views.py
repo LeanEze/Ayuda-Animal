@@ -41,7 +41,7 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Articulo
     fields = ['title' , 'content','content_upload', 'author', 'image', 'is_headline', 'image','genero','size', 'date_published']
     template_name = "APP_PANEL/article_form.html"
-    success_url = reverse_lazy("panel-page")
+    success_url = reverse_lazy("adopcion")
 
 
 class ArticleUpdateView(LoginRequiredMixin, BaseView, UpdateView):
@@ -66,7 +66,7 @@ class PanelLogout(LogoutView):
 
 class SignUpView(SuccessMessageMixin, CreateView):
   template_name = 'APP_PANEL/crear_cuenta_form.html'
-  success_url = reverse_lazy('panel-page')
+  success_url = reverse_lazy('raiz')
   form_class = UserCreationForm
   success_message = "¡¡ Se creo tu perfil satisfactoriamente !!"
 
