@@ -43,6 +43,7 @@ class Articulo(models.Model):
     date_published = models.DateTimeField(default=datetime.now)
 
 
+
 class Portal(models.Model):
     name = models.CharField(max_length=20)
     social_network_one = models.URLField(null=True)

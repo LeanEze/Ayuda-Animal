@@ -1,8 +1,8 @@
-const centrado = document.querySelector('.centrado')
+const centrado = document.querySelector('.loader')
 const elbody = document.querySelector("body")
+const dog = document.querySelector('.dog')
 const hiddenbar = document.querySelector('.hiddenbar')
 window.addEventListener('load',()=>{
-    centrado.classList.remove('centrado')
     elbody.classList.remove('hidden')
-    hiddenbar.classList.remove('hiddenbar')
+    centrado.style.display = "none"
 })
