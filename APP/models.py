@@ -28,6 +28,12 @@ SIZE_CHOICES = (
     ('grande', 'Grande +20kg')
 )
 
+AGE_CHOICES = (
+    ('cachorro','Cachorro'),
+    ('adulto', 'Adulto')
+)
+
+
 class Articulo(models.Model):
     title = models.CharField(max_length=100)
     short_content = models.CharField(max_length=180)
@@ -37,6 +43,7 @@ class Articulo(models.Model):
     author = models.ForeignKey(Publicador, on_delete=models.DO_NOTHING)
     genero = models.CharField(max_length=6, choices=GENERO_CHOICES, default='Macho')
     size = models.CharField(max_length=25, choices=SIZE_CHOICES, default='chico')
+    age = models.CharField(max_length=10, choices=AGE_CHOICES, default='adulto')
     is_headline= models.BooleanField()
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)

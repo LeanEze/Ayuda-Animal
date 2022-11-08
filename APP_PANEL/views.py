@@ -39,14 +39,14 @@ class PanelView(LoginRequiredMixin, BaseView, ListView):
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Articulo
-    fields = ['title' , 'content','content_upload', 'author', 'image', 'is_headline', 'image','genero','size', 'date_published']
+    fields = ['title' , 'content','content_upload', 'author', 'image', 'is_headline', 'image','genero','size','age','date_published']
     template_name = "APP_PANEL/article_form.html"
     success_url = reverse_lazy("adopcion")
 
 
 class ArticleUpdateView(LoginRequiredMixin, BaseView, UpdateView):
     model = Articulo
-    fields = ['title', 'content','content_upload', 'author', 'image', 'is_headline', 'image','genero','size', 'date_published']
+    fields = ['title', 'content','content_upload', 'author', 'image', 'is_headline', 'image','genero','size','age', 'date_published']
     success_url = reverse_lazy('adopcion')
     
 
