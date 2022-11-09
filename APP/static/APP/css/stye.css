@@ -319,20 +319,23 @@ p img {
 .imgPublicacion p img{
     object-fit: cover;
 }
-.adoptalos{
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-    top: 60%;
-    width: 500px;
-    display: flex;
-    flex-direction: column!important;
-    justify-content: center;
-    border: 1px solid ;
-    border-radius: 5px;
-    margin-left: 120px;
-    border-color: black;
-    padding: 20px;
+.adoptalos {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 60%;
+  width: 500px;
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-left: 120px;
+  border-color: black;
+  padding: 20px;
+
+  z-index: 99999;
+  top: 450px;
 }
 .h1flotante{
     color: white;

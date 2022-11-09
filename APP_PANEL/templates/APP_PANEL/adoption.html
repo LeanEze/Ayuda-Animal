@@ -38,8 +38,8 @@
     </div>
     <div class="botonDetalles text-center"><p><a class="btn btn-secondary" href="{%url 'article-detail' listing.id%}">Ver detalles »</a></p></div>
     {% if request.user.is_authenticated%}
-    <a class="btn btn-secondary" href="{%url 'article-delete' listing.id%}">Eliminar» <img src="{%static 'APP/css/eliminar.png'%}" alt="" srcset="" width="20px"></a>
-    <a class="btn btn-secondary" href="{%url 'article-update' listing.id%}">Editar»<img src="{%static 'APP/css/editar.png'%}" alt="" srcset="" width="25px"></a>
+    <a class="btn btn-danger" href="{%url 'article-delete' listing.id%}">Eliminar» <img src="{%static 'APP/css/eliminar.png'%}" alt="" srcset="" width="20px"></a>
+    <a class="btn btn-primary mt-2" href="{%url 'article-update' listing.id%}">Editar»<img src="{%static 'APP/css/editar.png'%}" alt="" srcset="" width="25px"></a>
     {%endif%}
     </div>
 {% endfor %}
