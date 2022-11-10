@@ -412,7 +412,9 @@ strong{
     color: black;
 }
 
-
+.carouselDog{
+  height: 100vh;
+}
 .contenido{
     display: flex;
     flex-direction: column;
@@ -616,6 +618,17 @@ donaciones */
     word-wrap: break-word;
     font-weight: 700;
     text-align: left;
+  }
+  .textoDetail p{
+    color: #384961;
+    font-size: 25px;
+    line-height: 1.2em;
+    margin-bottom: 0.4em;
+    word-wrap: break-word;
+    text-align: left;
+  }
+  .h3detail{
+    font-size: 40px;
   }
   p{
     font-size: 15px;
