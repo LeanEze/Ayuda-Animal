@@ -6,7 +6,7 @@
 
 <div class="textFieldEdition">
   
-  <form class="loginform" method="POST">
+  <form class="loginform" method="POST" enctype=multipart/form-data>
     <h1>Crear nueva historia</h1>
       {% csrf_token%}
       {{form.as_p}}

@@ -39,14 +39,14 @@ class PanelView(LoginRequiredMixin, BaseView, ListView):
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Articulo
-    fields = ['title' , 'content','content_upload', 'author', 'image', 'is_headline', 'image','genero','size','age','date_published']
+    fields = ['title' ,'content', 'author', 'is_headline', 'image','genero','size','age','date_published']
     template_name = "APP_PANEL/article_form.html"
     success_url = reverse_lazy("adopcion")
 
 
 class ArticleUpdateView(LoginRequiredMixin, BaseView, UpdateView):
     model = Articulo
-    fields = ['title', 'content','content_upload', 'author', 'image', 'is_headline', 'image','genero','size','age', 'date_published']
+    fields = ['title', 'content', 'author', 'is_headline', 'image','genero','size','age', 'date_published']
     success_url = reverse_lazy('adopcion')
     
 
@@ -94,7 +94,7 @@ class UserUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user.id == int(self.kwargs['pk'])
 
 def adopcion(request):
-    article = Articulo.objects.all()
+    article = Articulo.objects.all().order_by('title')
     listing_filter = ListingFilter(request.GET , queryset=article)
     context = {
         'listing_filter': listing_filter

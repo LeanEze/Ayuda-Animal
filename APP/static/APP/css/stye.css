@@ -71,10 +71,7 @@ label[for="id_content_upload"]:after{
 
 label[for="id_date_published"]:after{
     visibility: visible;
-    position: absolute;
-    margin-right: 10px;
-    top: 0;
-    left: 0;
+
     content:'Fecha: ';
 }
 
@@ -85,8 +82,23 @@ label[for="id_size"]{
 }
 label[for="id_size"]:after{
     visibility: visible;
+
     content:'Tamaño: ';
 }
+
+
+label[for="id_date_published"]{
+  visibility: hidden;
+  position: relative;
+}
+label[for="id_date_published"]:after{
+  visibility: visible;
+  content:'Fecha: ';
+}
+li{
+  list-style: none;
+}
+
 .carousel{
     margin-top: -1px;
 }
@@ -319,6 +331,56 @@ p img {
 .imgPublicacion p img{
     object-fit: cover;
 }
+.imgPublicacion  img{
+  object-fit: cover;
+}
+.deleteDog{
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  animation-name: eliminar;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes eliminar{
+  from{
+    opacity: 0;
+  }
+}
+to{
+  opacity: 1;
+}
+
+
+.formularioDog{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 10px;
+  box-shadow: 4px 6px 34px -2px rgba(0,0,0,0.65);
+  -webkit-box-shadow: 4px 6px 34px -2px rgba(0,0,0,0.65);
+  -moz-box-shadow: 4px 6px 34px -2px rgba(0,0,0,0.65);
+  padding: 30px 20px;
+}
+strong{
+  color: red;
+}
+.eliminacionBotones{
+  display: flex;
+  justify-content: space-between;
+}
+.info{
+  font-size: 10px;
+}
+.tacho{
+  align-item: center;
+}
+
 .adoptalos {
   display: flex;
   flex-wrap: wrap;
@@ -333,13 +395,15 @@ p img {
   margin-left: 120px;
   border-color: black;
   padding: 20px;
-
-  z-index: 99999;
+  z-index: 9998;
   top: 450px;
 }
 .h1flotante{
     color: white;
     font-weight: bold;
+}
+.slide{
+  margin-top: 86px;
 }
 .btn-secondary{
     background-color: rgb(255, 202, 202)!important;
