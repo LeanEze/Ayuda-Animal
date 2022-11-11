@@ -35,19 +35,19 @@ AGE_CHOICES = (
 
 
 class Articulo(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, verbose_name='Titulo')
     short_content = models.CharField(max_length=180)
-    content = RichTextField(blank= True, null=True)
+    content = RichTextField(blank= True, null=True, verbose_name='Contenido')
     content_upload = RichTextUploadingField(blank= True, null=True)
-    image = models.ImageField(upload_to="articles", null=True, blank=True)
-    author = models.ForeignKey(Publicador, on_delete=models.DO_NOTHING)
+    image = models.ImageField(upload_to="articles", null=True, blank=True, verbose_name='Imagen')
+    author = models.ForeignKey(Publicador, on_delete=models.DO_NOTHING, verbose_name='Autor')
     genero = models.CharField(max_length=6, choices=GENERO_CHOICES, default='Macho')
-    size = models.CharField(max_length=25, choices=SIZE_CHOICES, default='chico')
-    age = models.CharField(max_length=10, choices=AGE_CHOICES, default='adulto')
+    size = models.CharField(max_length=25, choices=SIZE_CHOICES, default='chico' ,verbose_name='Tamaño')
+    age = models.CharField(max_length=10, choices=AGE_CHOICES, default='adulto', verbose_name='Edad')
     is_headline= models.BooleanField()
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    date_published = models.DateTimeField(default=datetime.now)
+    date_published = models.DateTimeField(default=datetime.now, verbose_name='Fecha')
 
 
 
