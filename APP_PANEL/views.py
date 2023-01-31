@@ -39,7 +39,7 @@ class PanelView(LoginRequiredMixin, BaseView, ListView):
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Articulo
-    fields = ['title' ,'content', 'author', 'is_headline', 'image','genero','size','age','date_published']
+    fields = ['title' ,'content', 'author', 'is_headline', 'image', 'image1', 'image2','genero','size','age','date_published']
     template_name = "APP_PANEL/article_form.html"
     success_url = reverse_lazy("adopcion")
 

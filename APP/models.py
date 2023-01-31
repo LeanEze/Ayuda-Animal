@@ -40,6 +40,8 @@ class Articulo(models.Model):
     content = RichTextField(blank= True, null=True, verbose_name='Contenido')
     content_upload = RichTextUploadingField(blank= True, null=True)
     image = models.ImageField(upload_to="articles", null=True, blank=True, verbose_name='Imagen')
+    image1 = models.ImageField(upload_to="articles", null=True, blank=True, verbose_name='Imagen 1:')
+    image2 = models.ImageField(upload_to="articles", null=True, blank=True, verbose_name='Imagen 2: ')
     author = models.ForeignKey(Publicador, on_delete=models.DO_NOTHING, verbose_name='Autor')
     genero = models.CharField(max_length=6, choices=GENERO_CHOICES, default='Macho')
     size = models.CharField(max_length=25, choices=SIZE_CHOICES, default='chico' ,verbose_name='Tamaño')
