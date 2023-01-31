@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{% static 'APP/css/style.css' %}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <div class="deleteDog">
+    <div class="formularioDog">
+      <table>
+        <form method="post">{% csrf_token %}
+          <img class="tacho"src="{%static 'APP/css/eliminar.png'%}" alt="" srcset="" width="40px"></a>
+          <div class="textoEliminar">
+          <strong>¿Estas seguro que desea eliminar el articulo "{{ object.title }}"?</strong>
+          <p class="info">La imagen y su contenido seran eliminados permanentemente</p>
+        </div>
+         
+          <div class="eliminacionBotones">
+          <input class="btn btn-danger" type="submit" value="Eliminar" />
+
+          <a  class="btn btn-primary ml-2" href="{% url 'adopcion' %}">No</a>
+        </div>
+  
+        </form>
+  
+        <p>
+          
+        </p>
+  
+      </table>
+    </div>
+  </div>
+  <script src=""></script>
+</body>
+</html>
+

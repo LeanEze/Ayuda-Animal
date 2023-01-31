@@ -1,0 +1,17 @@
+{% extends "APP/padre.html" %}
+{% load static %}
+{% block Contenido %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+<div class="textFieldEdition">
+  
+    <form class="loginform" method="POST">
+      <h1>Editar articulo</h1>
+        {% csrf_token%}
+        {{form.as_ul}}
+        <input class="btn btn-primary" type="submit" value="Enviar">
+    </form>
+  </div>
+{% load static %}
+  {% endblock %}
