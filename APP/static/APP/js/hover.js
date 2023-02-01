@@ -3,7 +3,7 @@ const perro2 = document.querySelector('.perro2');
 const perro = document.querySelector('.perro');
 const vacio = document.querySelector('.vacio');
 
-
+//ESTA ES LA FUNCION DE CLICK QUE CAMBIA LAS IMAGENES DE CAROUSEL EN LA PANTALLA PRINCIPAL
 
 perro3.addEventListener('click',()=>{
     vacio.innerHTML=`<img src="/static/APP/css/perro3.jpg" alt="" class="d-block w-100 imagenes">`;
