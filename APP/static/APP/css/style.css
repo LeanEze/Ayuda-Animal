@@ -451,6 +451,9 @@ strong {
   z-index: 9998;
   top: 450px;
 }
+.navbar{
+  z-index: 9999;
+}
 
 .h1flotante {
   color: white;

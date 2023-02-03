@@ -46,7 +46,7 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
 
 class ArticleUpdateView(LoginRequiredMixin, BaseView, UpdateView):
     model = Articulo
-    fields = ['title', 'content', 'author', 'is_headline', 'image','genero','size','age', 'date_published']
+    fields = ['title', 'content', 'author', 'is_headline', 'image', 'image1', 'image2', 'genero', 'size', 'age', 'date_published']
     success_url = reverse_lazy('adopcion')
     
 
