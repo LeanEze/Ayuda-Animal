@@ -723,11 +723,12 @@ hr {
 h3 {
   color: #384961;
   font-size: 25px;
-  line-height: 1.2em;
-  margin-bottom: 0.4em;
-  word-wrap: break-word;
-  font-weight: 700;
+  /* line-height: 1.2em;
+  margin-bottom: 0.4em; */
+  /* word-wrap: break-word;
+  font-weight: 700; */
   text-align: left;
+  font-family: 'Bodoni Moda', serif;
 }
 
 .textoDetail p {

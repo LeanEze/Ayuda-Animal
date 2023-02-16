@@ -5,12 +5,12 @@
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 
 <div class="textFieldEdition">
-  
+
   <form class="loginform" method="POST" enctype=multipart/form-data>
     <h1>Crear nueva historia</h1>
-      {% csrf_token%}
-      {{form.as_p}}
-      <input class="btn btn-primary" type="submit" value="Enviar">
+    {% csrf_token%}
+    {{form.as_p}}
+    <input class="btn btn-primary" type="submit" value="Enviar">
   </form>
 </div>
-  {% endblock %}
+{% endblock %}

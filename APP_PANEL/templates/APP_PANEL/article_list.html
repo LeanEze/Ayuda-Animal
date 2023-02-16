@@ -9,22 +9,24 @@
     <button class="btn btn-sm btn-primary" type="submit">Filtrar</button>
   </form>
 </div>
-  <div class="crear container"> 
-     <a href="{%url 'article-create'%}"><button class="btn btn-primary">Crear</button></a>
-  </div>
+<div class="crear container">
+  <a href="{%url 'article-create'%}"><button class="btn btn-primary">Crear</button></a>
+</div>
 <div class="publicaciones container">
 
-{% for articulo in object_list %}
-    <div class="contenedorPublicaciones">
-        <div class="imgPublicacion">{{articulo.content_upload | safe}}</div>
-      <h2 class="fw-normal text-center">{{articulo.title}}</h2>
-      <div class="texto text-center">
+  {% for articulo in object_list %}
+  <div class="contenedorPublicaciones">
+    <div class="imgPublicacion">{{articulo.content_upload | safe}}</div>
+    <h2 class="fw-normal text-center">{{articulo.title}}</h2>
+    <div class="texto text-center">
       <p class="">{{articulo.content | safe}}</p>
     </div>
-    <div class="botonDetalles text-center"><p><a class="btn btn-secondary" href="{%url 'article-detail' articulo.id%}">Ver detalles »</a></p></div>
+    <div class="botonDetalles text-center">
+      <p><a class="btn btn-secondary" href="{%url 'article-detail' articulo.id%}">Ver detalles »</a></p>
+    </div>
     <a class="btn btn-secondary" href="{%url 'article-delete' articulo.id%}">Eliminar»</a>
     <a class="btn btn-secondary" href="{%url 'article-update' articulo.id%}">Editar»</a>
-    </div>
-{% endfor %}
+  </div>
+  {% endfor %}
 </div>
 {% endblock %}

@@ -6,10 +6,12 @@
   <h1>Adopcion</h1>
   <h3>Hola, en esta pestaña puedes conocer las historias de quienes estan esperando un nuevo hogar. </h3>
   <p> Si deseas postularte para adoptar, toca en el boton "Completar formulario".
-    Evaluaremos  el formulario y nos estaremos comunicando. 
+    Evaluaremos el formulario y nos estaremos comunicando.
   </p>
   <hr>
-  <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSeRmzzjRyKCDyghAge_YuLXS4wYWRA-Vzp56GpoSdZ3jxpikQ/viewform">Completar Formulario >></a>
+  <a class="btn btn-secondary"
+    href="https://docs.google.com/forms/d/e/1FAIpQLSeRmzzjRyKCDyghAge_YuLXS4wYWRA-Vzp56GpoSdZ3jxpikQ/viewform">Completar
+    Formulario >></a>
 </div>
 
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
@@ -23,26 +25,31 @@
 {% if request.user.is_authenticated%}
 <div class="botoncrear container">
   <a href="{%url 'article-create'%}"><button class="btn btn-primary">Crear</button></a>
-<div class="crear container"> 
-  
-</div>
-{%endif%}
-<div class="grid-container container">
-  
-{% for listing in listing_filter.qs %}
+  <div class="crear container">
+
+  </div>
+  {%endif%}
+  <div class="grid-container container">
+
+    {% for listing in listing_filter.qs %}
     <div class="grid-item" id="animales">
-        <div class="imgPublicacion"><img  class ="bd-placeholder-img rounded-circle" src="/media/{{listing.image}}" alt="" srcset="" width="140px" height="140px"></div>
+      <div class="imgPublicacion"><img class="bd-placeholder-img rounded-circle" src="/media/{{listing.image}}" alt=""
+          srcset="" width="140px" height="140px"></div>
       <h2 class="fw-normal text-center">{{listing.title}}</h2>
-    <div class="botonDetalles text-center"><p><a class="btn btn-secondary" href="{%url 'article-detail' listing.id%}">Ver detalles »</a></p></div>
-    {% if request.user.is_authenticated%}
-    <a class="btn btn-danger" href="{%url 'article-delete' listing.id%}">Eliminar» <img src="{%static 'APP/css/eliminar.png'%}" alt="" srcset="" width="20px"></a>
-    <a class="btn btn-primary mt-2" href="{%url 'article-update' listing.id%}">Editar»<img src="{%static 'APP/css/editar.png'%}" alt="" srcset="" width="25px"></a>
-    {%endif%}
+      <div class="botonDetalles text-center">
+        <p><a class="btn btn-secondary" href="{%url 'article-detail' listing.id%}">Ver detalles »</a></p>
+      </div>
+      {% if request.user.is_authenticated%}
+      <a class="btn btn-danger" href="{%url 'article-delete' listing.id%}">Eliminar» <img
+          src="{%static 'APP/css/eliminar.png'%}" alt="" srcset="" width="20px"></a>
+      <a class="btn btn-primary mt-2" href="{%url 'article-update' listing.id%}">Editar»<img
+          src="{%static 'APP/css/editar.png'%}" alt="" srcset="" width="25px"></a>
+      {%endif%}
     </div>
-{% endfor %}
-</div>
+    {% endfor %}
+  </div>
 </div>
 <script src="{% static 'APP/js/ScrollMagic.min.js' %}"></script>
-        <script src="{% static 'APP/js/scrollEfects.js' %}"></script>
-        <script src="{% static 'APP/js/debug.addIndicators.min.js' %}"></script>
+<script src="{% static 'APP/js/scrollEfects.js' %}"></script>
+<script src="{% static 'APP/js/debug.addIndicators.min.js' %}"></script>
 {% endblock %}
