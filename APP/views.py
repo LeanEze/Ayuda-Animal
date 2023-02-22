@@ -18,6 +18,9 @@ def mostrar_donaciones(request):
 def mostrar_contactenos(request):
     return render(request, "APP/Contactenos.html", {})
 
+def mostrar_transito(request):
+    return render(request, "APP/Transito.html", {})
+
 def mostrar_login(request):
     
     return render(request ,"APP_PANEL/panel_login.html", {})
