@@ -1,8 +1,12 @@
+@font-face {
+  font-family: 'Lazydog';
+  src: url(lazy_dog.ttf);
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Helvetica !important;
+  font-family: 'Lazydog' !important;
 }
 
 .container {
@@ -157,7 +161,6 @@ li {
 
 .boton {
   display: flex;
-  font-family: Helvetica !important;
   font-weight: bolder;
   justify-content: center;
   text-decoration: none !important;
@@ -173,6 +176,7 @@ li {
 
 }
 
+
 .paneles {
   display: flex;
   align-items: center !important;
@@ -183,7 +187,6 @@ li {
 }
 
 .boton5 {
-  font-family: Helvetica !important;
   font-weight: bolder;
   color: black;
   height: 40px;
@@ -427,7 +430,11 @@ strong {
 }
 
 .info {
-  font-size: 10px;
+  font-size: 20px;
+}
+/* links botones */
+a{
+  font-size: 20px;
 }
 
 .tacho {
@@ -470,6 +477,12 @@ strong {
 
 .btn {
   color: black;
+  font-size: 20px;
+}
+
+/* todos los P */
+p{
+  font-size: 20px!important;
 }
 
 .carouselDog {
@@ -722,13 +735,13 @@ hr {
 
 h3 {
   color: #384961;
-  font-size: 25px;
+  font-size: 30px;
   /* line-height: 1.2em;
   margin-bottom: 0.4em; */
   /* word-wrap: break-word;
   font-weight: 700; */
   text-align: left;
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Lazydog' ,sans-serif!important;
 }
 
 .textoDetail p {
