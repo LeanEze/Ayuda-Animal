@@ -1,14 +1,17 @@
-@font-face {
+/* @font-face {
   font-family: 'Lazydog';
   src: url(lazy_dog.ttf);
-}
+} */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Lazydog' !important;
+  font-family: 'PT Sans', sans-serif;
 }
 
+h1 ,h2{
+  font-family: 'Bebas Neue', cursive;
+}
 .container {
   background-color: rgb(255, 255, 255);
 
@@ -18,6 +21,10 @@
   padding: 0;
 
 }
+.carruosel{
+  height: 200px;
+}
+
 
 #id_short_content {
   font-size: 30px;
@@ -29,84 +36,6 @@
   font-size: 10px;
 }
 
-/* label[for="id_title"]{
-  visibility: hidden;
-  position: relative;
-}
-label[for="id_title"]:after{
-  visibility: visible;
-  position: absolute;
-  margin-right: 10px;
-  top: 0;
-  left: 0;
-  content:'Titulo: ';
-}
-p input{
-  margin-left: 20px;
-}
-label[for="id_content"]{
-  visibility: hidden;
-  position: relative;
-}
-label[for="id_content"]:after{
-  visibility: visible;
-  position: absolute;
-  margin-right: 10px;
-  top: 0;
-  left: 0;
-  content:'Contenido: ';
-}
-label[for="id_author"]{
-  visibility: hidden;
-  position: relative;
-}
-label[for="id_author"]:after{
-  visibility: visible;
-  position: absolute;
-  margin-right: 10px;
-  top: 0;
-  left: 0;
-  content:'Autor: ';
-}
-label[for="id_content_upload"]{
-  visibility: hidden;
-  position: relative;
-}
-label[for="id_content_upload"]:after{
-  visibility: visible;
-  position: absolute;
-  margin-right: 10px;
-  top: 0;
-  left: 0;
-  content:'Cargar imagen: ';
-}
-
-label[for="id_date_published"]:after{
-  visibility: visible;
-
-  content:'Fecha: ';
-}
-
-
-label[for="id_size"]{
-  visibility: hidden;
-  position: relative;
-}
-label[for="id_size"]:after{
-  visibility: visible;
-
-  content:'Tamaño: ';
-}
-
-
-label[for="id_date_published"]{
-visibility: hidden;
-position: relative;
-}
-label[for="id_date_published"]:after{
-visibility: visible;
-content:'Fecha: ';
-} */
 li {
   list-style: none;
 }
@@ -173,8 +102,10 @@ li {
   border-radius: 5px;
   background-color: rgb(255, 202, 202);
   border: none;
+  font-size: 20px;
 
 }
+
 
 
 .paneles {
@@ -193,6 +124,7 @@ li {
   align-items: center;
   width: 150px;
   font-family: DM Sans;
+  font-size: 20px;
   border-radius: 5px;
   background-color: rgb(255, 202, 202);
   border: none;
@@ -222,6 +154,7 @@ li {
   display: flex;
   font-family: Helvetica !important;
   justify-content: center;
+  font-size: 15px;
   font-weight: bolder;
   height: 40px;
   margin-left: 20px;
@@ -281,7 +214,7 @@ p img {
   display: flex;
   justify-content: center;
   font-family: Helvetica !important;
-
+  font-size: 15px;
   text-align: center;
   font-weight: bolder;
 
@@ -434,7 +367,8 @@ strong {
 }
 /* links botones */
 a{
-  font-size: 20px;
+  font-size: 25px;
+  font-family: 'Bebas Neue', cursive;
 }
 
 .tacho {
@@ -485,9 +419,6 @@ p{
   font-size: 20px!important;
 }
 
-.carouselDog {
-  height: 100vh;
-}
 
 .contenido {
   display: flex;
@@ -554,6 +485,10 @@ label {
     text-align: center;
     justify-content: center;
     margin: 0 auto;
+  }
+
+  footer{
+    padding-top: 100x;
   }
 
   .contenedorPublicaciones {
@@ -751,11 +686,13 @@ h3 {
   margin-bottom: 0.4em;
   word-wrap: break-word;
   text-align: left;
+
 }
 
 .h3detail {
   font-size: 40px;
 }
+
 
 p {
   font-size: 15px;

@@ -21,7 +21,7 @@
     </div>
   </main> -->
 
-<div id="carouselExample" class="carousel slide container carouselDog" data-ride="carousel">
+<div id="carouselExample" class="carousel slide container" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExample" data-slide-to="1"></li>
@@ -47,11 +47,12 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden"></span>
   </a>
+</div>
+<div class="carruosel container pt-4">
   <h3 class="text-center mt-3 h3detail">{{articulo.title}}</h3>
   <div class="textoDetail">
     {{articulo.content | safe}}
   </div>
 </div>
-
 
 {% endblock %}
