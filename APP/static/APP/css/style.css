@@ -277,7 +277,11 @@ p img {
   padding-bottom: 20px;
 
 }
-
+.coincidencias{
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
 .grid-item {
   display: flex;
   flex-direction: column;

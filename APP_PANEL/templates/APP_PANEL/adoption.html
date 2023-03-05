@@ -30,7 +30,11 @@
   </div>
   {%endif%}
   <div class="grid-container container">
+    {%if not listing_filter.qs%}
 
+      <h4 class="coincidencias">No se encontraron coincidencias</h4>
+
+    {%endif%}
     {% for listing in listing_filter.qs %}
     <div class="grid-item" id="animales">
       <div class="imgPublicacion"><img class="bd-placeholder-img rounded-circle" src="/media/{{listing.image}}" alt=""
@@ -46,6 +50,7 @@
           src="{%static 'APP/css/editar.png'%}" alt="" srcset="" width="25px"></a>
       {%endif%}
     </div>
+
     {% endfor %}
   </div>
 </div>
