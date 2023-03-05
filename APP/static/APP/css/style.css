@@ -1,7 +1,7 @@
-/* @font-face {
+@font-face {
   font-family: 'Lazydog';
   src: url(lazy_dog.ttf);
-} */
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,12 +9,16 @@
   font-family: 'PT Sans', sans-serif;
 }
 
-h1 ,h2{
-  font-family: 'Bebas Neue', cursive;
+h1, h2{
+  font-family: 'Lazydog', sans-serif;
 }
+
 .container {
   background-color: rgb(255, 255, 255);
 
+}
+.instagramImg{
+  text-decoration: underline;
 }
 
 #carouselExample {
@@ -152,12 +156,12 @@ li {
 } */
 .boton1 {
   display: flex;
-  font-family: Helvetica !important;
+  font-family: 'Pt-Sans', cursive !important;
   justify-content: center;
   font-size: 15px;
   font-weight: bolder;
   height: 40px;
-  margin-left: 20px;
+  margin-left: 30px;
   text-decoration: none !important;
   color: black;
   align-items: center;
@@ -178,7 +182,7 @@ p img {
 .textFieldEdition {
   display: flex;
   flex-direction: column;
-  background-color: rgb(244, 215, 215);
+  background-color: white;
 
 }
 
@@ -213,8 +217,8 @@ p img {
 .boton2 {
   display: flex;
   justify-content: center;
-  font-family: Helvetica !important;
-  font-size: 15px;
+  font-family: 'PT-Sans', cursive !important;
+  font-size: 18px;
   text-align: center;
   font-weight: bolder;
 
@@ -368,7 +372,8 @@ strong {
 /* links botones */
 a{
   font-size: 25px;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Pt-Sans', cursive;
+  font-weight: bolder;
 }
 
 .tacho {
@@ -676,7 +681,7 @@ h3 {
   /* word-wrap: break-word;
   font-weight: 700; */
   text-align: left;
-  font-family: 'Lazydog' ,sans-serif!important;
+  font-family: 'PT-Sans' ,sans-serif!important;
 }
 
 .textoDetail p {
