@@ -102,11 +102,11 @@ li {
   height: 40px;
   align-items: center !important;
   width: 150px;
-  font-family: DM Sans;
+  font-family: 'Pt-Sans', cursive !important;
   border-radius: 5px;
   background-color: rgb(255, 202, 202);
   border: none;
-  font-size: 20px;
+  font-size: 18px;
 
 }
 
