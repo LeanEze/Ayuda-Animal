@@ -1,8 +1,13 @@
 {% extends "APP/padre.html" %}
 {% load static %}
+{% block Title %}
+<title>Log In</title>
+<link rel="icon" type="image/x-icon" href="{%static 'APP/img/ayudaanimal.png'%}">
+
+{% endblock %}
 {% block Contenido %}
 <div class="contenido">
-  <img class="" src="{% static 'APP/css/ayudaanimal.png' %}" alt="" width="120" height="100">
+  <img class="" src="{% static 'APP/img/ayudaanimal.png' %}" alt="" width="120" height="100">
   <h1 class="ingresarh1">Ingresar Usuario</h1>
 
   <div class="form2">

@@ -1,6 +1,12 @@
 {% extends "APP/padre.html" %}
-{% block Contenido %}
 {% load static %}
+{% block Title %}
+<title>Ayuda Animal</title>
+<link rel="icon" type="image/x-icon" href="{%static 'APP/img/ayudaanimal.png'%}">
+
+{% endblock %}
+{% block Contenido %}
+
 <div id="carouselExample" class="carousel slide container" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
@@ -15,12 +21,12 @@
         </div>
       </div>
       <div class="vacio">
-        <img class="imagenCarousel" src="{% static 'APP/css/perro3.jpg' %}" alt="" class="d-block w-100 imagenes"
+        <img class="imagenCarousel" src="{% static 'APP/img/perro3.jpg' %}" alt="" class="d-block w-100 imagenes"
           height="700">
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{% static 'APP/css/perro2.jpg' %}" alt="" class="d-block w-100 imagenes">
+      <img src="{% static 'APP/img/perro2.jpg' %}" alt="" class="d-block w-100 imagenes">
     </div>
   </div>
   <a href="#carouselExample" class="carousel-control-prev" rol="button" data-slide="prev">
@@ -38,7 +44,7 @@
   <!-- Three columns of text below the carousel -->
   <div class="row" id="row">
     <div class="col-lg-4 circulos perro">
-      <img class="bd-placeholder-img rounded-circle perro1" src="{% static 'APP/css/pedrito.jpg' %}" alt=""
+      <img class="bd-placeholder-img rounded-circle perro1" src="{% static 'APP/img/pedrito.jpg' %}" alt=""
         width="140px" height="140px">
       <h2 class="fw-normal pt-2">Donaciones</h2>
       <p>Hacelo por ellos! Cualquier cosa q te sobre les sirve. Desde correas y collares usados, hasta juguetes. No
@@ -47,7 +53,7 @@
     </div><!-- /.col-lg-4 -->
 
     <div class="col-lg-4 circulos">
-      <img class="bd-placeholder-img rounded-circle perro2" src="{% static 'APP/css/brauni.jpg' %}" alt="" width="140px"
+      <img class="bd-placeholder-img rounded-circle perro2" src="{% static 'APP/img/brauni.jpg' %}" alt="" width="140px"
         height="140px">
       <h2 class="fw-normal pt-2">Para adoptar...</h2>
       <p>Cuando adoptamos hay que tomar la responsabilidad de comprarle collar y chapita(por cualquier imprevisto), y
@@ -56,7 +62,7 @@
     </div><!-- /.col-lg-4 -->
 
     <div class="col-lg-4 circulos">
-      <img class="bd-placeholder-img rounded-circle perro3" src="{% static 'APP/css/ayudaanimal.png' %}" alt=""
+      <img class="bd-placeholder-img rounded-circle perro3" src="{% static 'APP/img/ayudaanimal.png' %}" alt=""
         width="140px" height="140px">
       <h2 class="fw-normal pt-2">Sorteos por ellos</h2>
       <p>A veces recibimos donaciones para ser sorteadas y conseguir fondos para seguir ayudando. Por eso esten atentos
@@ -65,7 +71,7 @@
     </div><!-- /.col-lg-4 -->
 
     <div class="col-lg-4 circulos">
-      <img class="bd-placeholder-img rounded-circle perro4" src="{% static 'APP/css/clarens.jpg' %}" alt=""
+      <img class="bd-placeholder-img rounded-circle perro4" src="{% static 'APP/img/clarens.jpg' %}" alt=""
         width="140px" height="140px">
       <h2 class="fw-normal pt-2">Instragram, Facebook y Tik Tok</h2>
       <p>Siganos en nuestras redes, donde pasamos las novedades de los rescatados, partes medicos y los adoptados. </p>
@@ -73,7 +79,7 @@
     </div><!-- /.col-lg-4 -->
 
     <div class="col-lg-4 circulos">
-      <img class="bd-placeholder-img rounded-circle perro5" src="{% static 'APP/css/ayudaanimalparque.jpg' %}" alt=""
+      <img class="bd-placeholder-img rounded-circle perro5" src="{% static 'APP/img/ayudaanimalparque.jpg' %}" alt=""
         width="140px" height="140px">
       <h2 class="fw-normal pt-2">Tardes en el parque</h2>
       <p>Cuando disponemos de tiempo y los dias acompañan, organizamos unas hermosas juntadas con ellos y ustedes en las
@@ -82,7 +88,7 @@
 
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4 circulos">
-      <img class="bd-placeholder-img rounded-circle perro6" src="{% static 'APP/css/rubioYroma.jpg' %}" alt=""
+      <img class="bd-placeholder-img rounded-circle perro6" src="{% static 'APP/img/rubioYroma.jpg' %}" alt=""
         width="140px" height="140px">
       <h2 class="fw-normal pt-2">Historias felices</h2>
       <p>Ya alcanzamos las 60 adopciones, en nuestro Instagram pueden visualizar algunas de estas hermosas historias en

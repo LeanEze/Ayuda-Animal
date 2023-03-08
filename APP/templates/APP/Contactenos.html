@@ -1,6 +1,12 @@
 {% extends "APP/padre.html" %}
+{% load static %}
+{% block Title %}
+<title>Contactenos</title>
+<link rel="icon" type="image/x-icon" href="{%static 'APP/img/ayudaanimal.png'%}">
+
+{% endblock %}
 {% block Contenido %}
-<div class="container botonsend pb-3">
+<div class="container botonsend pb-5">
   <hr>
   <h1>Ayuda Animal</h1>
 
@@ -12,13 +18,13 @@
     es posible por el momento.<hr>
     Como no tenemos un lugar fisico donde alvergar a los animales rescatados nos manejamos con transitos, que son
     ofrecidos por volutad propia.<hr>
-    Cada animal rescatado sera dado en adopcion bajo los parametros que la organizacion crea pertinente.
+    Cada animal rescatado sera dado en adopción bajo los parametros que la organizacion crea pertinente.
     
     
     ¿Nos das una pata 🐾?
   </h3>
   <hr>
-  <p>Este sitio web ha sido donado por Rodrigo Maciel y Leandro Jamardo.</p>
+  <p class="pb-5">Este sitio web ha sido donado por Rodrigo Maciel y Leandro Jamardo.</p>
 
 
 

@@ -1,5 +1,10 @@
 {% extends "APP/padre.html" %}
 {% load static %}
+{% block Title %}
+<title>Adopcion</title>
+<link rel="icon" type="image/x-icon" href="{%static 'APP/img/ayudaanimal.png'%}">
+
+{% endblock %}
 {% block Contenido %}
 <div class="container botonsend container_">
   <hr>
@@ -45,9 +50,9 @@
       </div>
       {% if request.user.is_authenticated%}
       <a class="btn btn-danger" href="{%url 'article-delete' listing.id%}">Eliminar» <img
-          src="{%static 'APP/css/eliminar.png'%}" alt="" srcset="" width="20px"></a>
+          src="{%static 'APP/img/eliminar.png'%}" alt="" srcset="" width="20px"></a>
       <a class="btn btn-primary mt-2" href="{%url 'article-update' listing.id%}">Editar»<img
-          src="{%static 'APP/css/editar.png'%}" alt="" srcset="" width="25px"></a>
+          src="{%static 'APP/img/editar.png'%}" alt="" srcset="" width="25px"></a>
       {%endif%}
     </div>
 

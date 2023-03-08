@@ -1,6 +1,11 @@
 {% extends "APP/padre.html" %}
-{% block Contenido %}
 {% load static %}
+{% block Title %}
+<title>Donaciones</title>
+<link rel="icon" type="image/x-icon" href="{%static 'APP/img/ayudaanimal.png'%}">
+
+{% endblock %}
+{% block Contenido %}
 
 <div class="container botonsend pb-3">
   <hr>
@@ -10,7 +15,7 @@
   </p>
   <h3>Dona por Mercado Pago</h3>
   <hr>
-  <img class="mercadopago" src="{%static 'APP/css/mercadop.png' %}" width="500px" alt="" srcset="">
+  <img class="mercadopago" src="{%static 'APP/img/mercadop.png' %}" width="500px" alt="" srcset="">
   <div class="botones container d-flex justify-content-center">
 
     <a
