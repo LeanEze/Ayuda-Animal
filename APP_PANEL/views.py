@@ -101,11 +101,11 @@ def adopcion(request):
     }
     return render(request,'APP_PANEL/adoption.html', context)
 
-
+#Genera pantalla inicio sesion
 def mostrar_login(request):
     return render(request, "APP_PANEL/panel_login.html", {})
 
-
+#Muestra articulos en el template
 class ArticleDetailView(DetailView):
 
     model = Articulo

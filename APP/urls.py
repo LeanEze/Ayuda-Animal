@@ -14,8 +14,6 @@ urlpatterns = [
     path('donaciones/', views.mostrar_donaciones, name='donaciones'),
     path('contactenos/', views.mostrar_contactenos, name='contactenos'),
     path('transito/', views.mostrar_transito, name='transito'),
-    # path('login/', views.mostrar_login, name='login'),
-    # path("logout/", PanelLogout.as_view (template_name='mi_app/logout.html'), name = 'logout'),
     path('', include('APP_PANEL.urls')),
 ]
 
