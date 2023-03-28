@@ -435,14 +435,27 @@ p{
   justify-content: center;
   align-items: center;
   width: 500px;
-  background-color: #343a40;
+
   border-radius: 10px;
   height: 400px;
   margin-top: 150px !important;
   margin: 0 auto;
   margin-bottom: 300px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(15, 8, 8, 0.596);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
 }
-
+table tbody tr{
+  display: flex;
+  flex-direction: column;
+}
+ form  ul  table  tbody tr td{
+  width: 100%;
+}
+table tbody tr th label{
+  color: white;
+}
 .contenido h1 {
   text-align: center;
 }
@@ -1517,4 +1530,16 @@ PRELOADER SUPER PESADO */
   50% {
     border-color: orange;
   }
+}
+
+@media (max-width:700px ){
+  .contenido{
+    width: 100%;
+  }
+.deleteDog{
+  width: 100%;
+}
+.botonMargin{
+  margin-right: 20px;
+}
 }

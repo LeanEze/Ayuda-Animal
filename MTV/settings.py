@@ -87,9 +87,9 @@ WSGI_APPLICATION = 'MTV.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'DB',
+        'NAME': 'ayuda',
         'USER': 'postgres',
-        'PASSWORD': 'leopaternal93',
+        'PASSWORD': 'thiago123',
         'HOST': 'localhost', 
         'DATABASE_PORT': '5432'
     }
