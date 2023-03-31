@@ -180,16 +180,27 @@ p img {
 }
 
 .textFieldEdition {
-  display: flex;
+  display: flex!important;
+  width: 100%!important;
   flex-direction: column;
   background-color: white;
 
 }
-
+.django-ckeditor-widget{
+  display: flex!important;
+  width: 100%;
+}
+/* #cke_id_content{
+  display: flex!important;
+  width: 100%!important;
+} */
 .loginform {
   margin-top: 80px;
-  width: 700px;
+  width: 100%;
   padding: 20px;
+}
+.loginform li{
+  width: 100%;
 }
 
 .id_title {
@@ -325,6 +336,7 @@ p img {
   object-fit: cover;
 }
 
+
 .deleteDog {
   width: 100vh;
   height: 100vh;
@@ -424,8 +436,11 @@ a{
 }
 
 /* todos los P */
-p{
+.circulos p{
   font-size: 20px!important;
+}
+.botonsend p{
+  font-size: 20px;
 }
 
 
