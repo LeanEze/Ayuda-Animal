@@ -38,3 +38,10 @@ class BaseView(View):
         context['headline'] = Articulo.objects.filter(is_headline=True).order_by('date_updated').first()
         context['portal'] = Portal.objects.order_by('date_updated').first()
         return context    
+
+def error_404_view(request, exception):
+   
+    # we add the path to the 404.html file
+    # here. The name of our HTML file is 404.html
+    return render(request, 'APP/404.html')
+

@@ -1,0 +1,15 @@
+{% extends "APP/padre.html" %}
+{% load static %}
+{% block Title %}
+<title>Error 404</title>
+<link rel="icon" type="image/x-icon" href="{%static 'APP/img/ayudaanimal.png'%}">
+
+{% endblock %}
+{% block Contenido %}
+<div class="container error404">
+    <img class="navbar-brand" src="{% static 'APP/img/ayudaanimal.png' %}" alt="" srcset="" width="300px" height="300px">
+    <h3>ERORR 404</h3>
+    <a class="btn btn-primary" href="{%url 'raiz'%}">Volver al Inicio</a>
+
+</div>
+{% endblock %}

@@ -114,3 +114,5 @@ class ArticleDetailView(DetailView):
 
     def test_func(self):
         return self.request.user.id == int(self.kwargs['pk'])
+    
+

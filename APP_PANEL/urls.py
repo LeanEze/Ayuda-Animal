@@ -1,6 +1,6 @@
 from django.urls import path, include
 from APP_PANEL import views
-from APP_PANEL.views import ArticleDetailView,ArticleCreateView, PanelLogin, PanelLogout, SignUpView, UserProfile, UserUpdate,dummy,PanelView, ArticleUpdateView,ArticleDeleteView 
+from APP_PANEL.views import ArticleDetailView,ArticleCreateView, PanelLogin, PanelLogout, SignUpView, UserProfile, UserUpdate,dummy,PanelView, ArticleUpdateView,ArticleDeleteView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,4 +25,6 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),    
     path('adopcion/', views.adopcion, name='adopcion'),
     ]
+
+
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

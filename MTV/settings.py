@@ -24,9 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w92wf(&1$$m7wafy^7u-b=ios)^u%c9-z#33jvpu550+65g80&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.0.4']
+ALLOWED_HOSTS = ['*']
+
+# DEBUG = True  asi debe estar en desarrollo
+
+# ALLOWED_HOSTS = []   asi debe estar en desarrollo
 
 #Esto es para heroku
 
@@ -56,7 +60,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 
@@ -129,9 +132,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
-MEDIA_URL= '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
+STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+if DEBUG:
+  STATICFILES_DIRS = [os.path.join(BASE_DIR, 'APP/static')]
+
+else:
+
+  STATIC_ROOT = os.path.join(BASE_DIR, 'APP/static')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#STATIC_URL = 'static/' asi debe estar en desarrollo
+#MEDIA_URL= '/media/' asi debe estar en desarrollo 
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
