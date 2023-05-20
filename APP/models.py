@@ -33,6 +33,13 @@ AGE_CHOICES = (
     ('adulto', 'Adulto')
 )
 
+ANIMAL_CHOICES = (
+    ('perro','Perro'),
+    ('gato', 'Gato'),
+    ('otros', 'Otros')
+)
+
+
 
 class Articulo(models.Model):
     title = models.CharField(max_length=100, verbose_name='Titulo')
@@ -43,6 +50,7 @@ class Articulo(models.Model):
     image1 = models.ImageField(upload_to="articles", null=True, blank=True, verbose_name='Imagen 1:')
     image2 = models.ImageField(upload_to="articles", null=True, blank=True, verbose_name='Imagen 2: ')
     author = models.ForeignKey(Publicador, on_delete=models.DO_NOTHING, verbose_name='Autor')
+    animal = models.CharField(max_length=8, choices=ANIMAL_CHOICES, default='Perro')
     genero = models.CharField(max_length=6, choices=GENERO_CHOICES, default='Macho')
     size = models.CharField(max_length=25, choices=SIZE_CHOICES, default='chico' ,verbose_name='Tamaño')
     age = models.CharField(max_length=10, choices=AGE_CHOICES, default='adulto', verbose_name='Edad')
