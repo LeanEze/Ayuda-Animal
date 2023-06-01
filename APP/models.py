@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from datetime import datetime   
+from PIL import Image
 
 
 
@@ -58,7 +59,20 @@ class Articulo(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     date_published = models.DateTimeField(default=datetime.now, verbose_name='Fecha')
-
+    thumbnail = models.ImageField(upload_to='reduced', blank=True, null=True)
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.image and not self.thumbnail:
+            img = Image.open(self.image.path)
+            # Reducción de la imagen a un tamaño específico
+            reduced_img = img.resize((300, 300))
+            # Guardar la imagen reducida
+            reduced_img.save(self.image.path.replace('articles', 'reduced'))
+            # Asignar la ruta de la imagen reducida al campo correspondiente del modelo
+            self.thumbnail = self.image.path.replace('articles', 'reduced')
+            # Guardar el objeto actualizado en la base de datos
+            super().save(*args, **kwargs)
+        
 
 
 class Portal(models.Model):

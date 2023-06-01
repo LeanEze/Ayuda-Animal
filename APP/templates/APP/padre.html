@@ -20,9 +20,23 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
 
   <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+  <meta
+      name="description"
+      content="Ayuda animal rescate animal, transito, adopcion"
+    />
+    <meta property="og:title" content="Ayuda animal, rescate animal, adopcion y transito">
+    <meta property="og:description" content="Ayuda animal, refugio de animales, transito, adopcino animales">
+    <meta property="og:url" content="https://www.ayudaanimal.com.ar">
+    <meta property="og:site_name" content="ayudaanimal">
+    <meta property="og:type" content="website">
+    <meta name="keywords" content="Ayuda animal, adopcion, transito, perros , gatos">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ayuda animal, rescate animal, adopcion y transito">
+    <meta name="twitter:description" content="Ayuda animal, refugio de animales, transito, adopcino animales">
+    <meta name="twitter:image" content="">
   {% block Title %}
 
 
@@ -77,7 +91,7 @@
 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <img class="navbar-brand" src="{% static 'APP/img/ayudaanimal.png' %}" alt="" srcset="" width="70" height="70">
+      <img class="navbar-brand" src="{% static 'APP/img/ayudaanimal.png' %}" alt="logo ayuda animal" srcset="" width="70" height="70">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -91,7 +105,7 @@
               <a class="nav-link active" aria-current="page" href="{%url 'raiz'%}">Inicio</a>
             </li>
             <li>
-              <a class="nav-link" href="{%url 'adopcion'%}">Adopcion</a>
+              <a class="nav-link" href="{%url 'adopcion'%}">Adopción</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{%url 'transito'%}">Transito</a>
@@ -100,7 +114,7 @@
               <a class="nav-link" href="{%url 'donaciones'%}">Donaciones</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{%url 'contactenos'%}">Contactenos</a>
+              <a class="nav-link" href="{%url 'contactenos'%}">Contáctenos</a>
             </li>
         </div>
         <div class="paneles">
@@ -113,7 +127,7 @@
           {%endif%}
 
           {% if not request.user.is_authenticated %}
-          <a class="nav-item boton" href="{% url 'panel-login' %}">Iniciar sesion <img class="botonimg"
+          <a class="nav-item boton" href="{% url 'panel-login' %}">Iniciar sesión <img class="botonimg"
               src="{% static 'APP/img/pataboton.png' %}" alt="" width="40px"></a>
           {%endif%}
         </div>
@@ -146,17 +160,16 @@
       <div class="miimagen">
 
         <a href="https://www.instagram.com/ayuda_animal.ok/" target="_blank"><img class=""
-            src="{% static 'APP/img/inst.png' %}" alt="" width="20px"></a>
+            src="{% static 'APP/img/inst.png' %}" alt="instagram logo" width="20px"></a>
         <a href="https://www.facebook.com/Ayuda_animalok-105794385347786" target="_blank"><img class=""
-            src="{% static 'APP/img/face.png' %}" alt=""></a>
+            src="{% static 'APP/img/face.png' %}" alt="facebook logo"></a>
       </div>
     </div>
   </footer>
 
+ 
   <script src="{% static 'APP/js/bootstrap.js' %}"></script>
-  <script src="{% static 'APP/js/hover.js' %}"></script>
   <script src="{% static 'APP/js/hover1.js' %}"></script>
-  <script src="{% static 'APP/js/imagenes.js' %}"></script>
   <script src="{% static 'APP/js/hover2.js' %}"></script>
   <script src="{% static 'APP/js/hover3.js' %}"></script>
   <script src="{% static 'APP/js/scrollEfects.js' %}"></script>

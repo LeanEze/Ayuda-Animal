@@ -28,6 +28,7 @@ h1, h2{
   background-color: rgb(255, 255, 255);
 
 }
+
 .instagramImg{
   text-decoration: underline;
 }
@@ -71,11 +72,6 @@ li {
   text-align: center !important;
 }
 
-.eo {
-  z-index: 23;
-
-}
-
 
 .crear {
   padding-top: 20px;
@@ -109,7 +105,6 @@ li {
   justify-content: center;
   text-decoration: none !important;
   color: black;
-  right: 20px;
   height: 40px;
   align-items: center !important;
   width: 150px;
@@ -218,15 +213,7 @@ p img {
   color: red;
 }
 
-.articulo {
-  display: flex;
-  position: relative;
-  border: solid 1px;
-  border-radius: 5px;
-  width: 800px;
-  margin: 0 auto;
-  margin-top: 10px;
-}
+
 
 .form2 form input {
   width: 300px;
@@ -560,17 +547,15 @@ label {
     flex-direction: row;
     height: 200px;
   }
-
   .grid-item {
-    width: 100% !important;
-    margin-left: 0px !important;
     padding: 20px !important;
-    margin-right: 0px;
-    margin-left: 0px;
-  }
+    margin-right: 20px;
+}
+
 
   .grid-container {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(350px, 1fr));
   }
 
   label {
@@ -1567,5 +1552,43 @@ PRELOADER SUPER PESADO */
 }
 .botonMargin{
   margin-right: 20px;
+}
+.vacio{
+  width: 100%!important;
+}
+.vacio img{
+  height: 500px!important;
+  width: 100%!important;
+}
+.carousel-item img{
+  height: 500px!important;
+}
+.imagenCarousel{
+  object-fit: cover;
+}
+.pantufla{
+  object-fit: cover;
+}
+.adoptalos{
+  top: 280px;
+  border: 0;
+  height:190px ;
+  flex-direction: column!important;
+  padding: 5px!important;
+}
+.h1flotante{
+  font-size: 30px;
+  text-align: center;
+}
+}
+
+@media screen and (max-width: 450px){
+
+.grid-item {
+  width: 100% !important;
+  margin-left: 0px !important;
+  padding: 20px !important;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 }

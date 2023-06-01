@@ -9,17 +9,14 @@
 <div class="container botonsend container_">
   <hr>
   <h1>Adopcion</h1>
-  <p> Hola, en esta pestaña puedes conocer las historias de quienes estan esperando un nuevo hogar.<br>Si deseas postularte para adoptar, toca en el boton "Completar formulario".
+  <p> Hola, en esta pestaña puedes conocer las historias de quienes están esperando un nuevo hogar.<br>Si deseas postularte para adoptar, toca en el botón "Completar formulario".
     Evaluaremos el formulario y nos estaremos comunicando.
   </p>
   <hr>
   <a class="btn btn-secondary"
-    href="https://docs.google.com/forms/d/e/1FAIpQLSeRmzzjRyKCDyghAge_YuLXS4wYWRA-Vzp56GpoSdZ3jxpikQ/viewform">Completar
+    href="https://docs.google.com/forms/d/e/1FAIpQLSeRmzzjRyKCDyghAge_YuLXS4wYWRA-Vzp56GpoSdZ3jxpikQ/viewform" target="_blank">Completar
     Formulario >></a>
 </div>
-
-<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
-<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 <div class="filtro container">
   <form class="miformulario" method="get">
     {{listing_filter.form}}
@@ -41,7 +38,7 @@
     {%endif%}
     {% for listing in listing_filter.qs %}
     <div class="grid-item" id="animales">
-      <div class="imgPublicacion"><img class="bd-placeholder-img rounded-circle" src="/media/{{listing.image}}" alt=""
+      <div class="imgPublicacion"><img class="bd-placeholder-img rounded-circle" src="/media/{{listing.thumbnail}}" alt=""
           srcset="" width="140px" height="140px"></div>
       <h3 class="fw-normal text-center pt-3">{{listing.title}}</h3>
       <div class="botonDetalles text-center">

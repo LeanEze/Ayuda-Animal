@@ -25,17 +25,17 @@
       </div>
     </div>
   </main> -->
-
-<div id="carouselExample" class="carousel slide container" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExample" data-slide-to="1"></li>
-  </ol>
+  
+  <div id="carouselExample" class="carousel slide container container_" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExample" data-slide-to="1"></li>
+    </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-
+      
       <img src="/media/{{articulo.image}}" alt="" class="d-block w-100 imagenes">
-
+      
     </div>
     <div class="carousel-item">
       <img src="/media/{{articulo.image1}}" alt="" class="d-block w-100 imagenes">
@@ -53,11 +53,13 @@
     <span class="visually-hidden"></span>
   </a>
 </div>
-<div class="carruosel container pt-4">
+<div class="container pb-4">
+<div class="container pt-4">
   <h3 class="text-center mt-3 h3detail">{{articulo.title}}</h3>
   <div class="textoDetail">
     {{articulo.content | safe}}
   </div>
+</div>
 </div>
 
 {% endblock %}
