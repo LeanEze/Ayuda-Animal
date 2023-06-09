@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-w92wf(&1$$m7wafy^7u-b=ios)^u%c9-z#33jvpu550+65g80&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.ayudaanimal.com.ar' ,'ayudaanimal.com.ar']
 
 # DEBUG = True  asi debe estar en desarrollo
 
