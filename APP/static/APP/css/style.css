@@ -1592,3 +1592,23 @@ PRELOADER SUPER PESADO */
   margin-left: 0px;
 }
 }
+
+.imgTransito{
+  object-fit: cover;
+}
+.imagenTransito{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+}
+.imagenTransito img{
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px){
+  .imagenTransito{
+    width: 100%;
+  }
+
+  }

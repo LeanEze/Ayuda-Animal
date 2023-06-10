@@ -62,12 +62,11 @@ class Articulo(models.Model):
     thumbnail = models.ImageField(upload_to='reduced', blank=True, null=True, verbose_name="miniatura")
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-        if self.thumbnail:
+        if self.thumbnail :
             img = Image.open(self.thumbnail.path)
             max_size = (200, 200)
             img.thumbnail(max_size)
             img.save(self.thumbnail.path)
-            print(img)
 
         
 
