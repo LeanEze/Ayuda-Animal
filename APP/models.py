@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from datetime import datetime   
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 
@@ -49,7 +49,7 @@ class Articulo(models.Model):
     content_upload = RichTextUploadingField(blank= True, null=True)
     image = models.ImageField(upload_to="articles", null=True, blank=True, verbose_name='Imagen')
     image1 = models.ImageField(upload_to="articles", null=True, blank=True, verbose_name='Imagen 1:')
-    image2 = models.ImageField(upload_to="articles", null=True, blank=True, verbose_name='Imagen 2: ')
+    image2 = models.ImageField(upload_to="articles", null=True, blank=True, verbose_name='Imagen 2:')
     author = models.ForeignKey(Publicador, on_delete=models.DO_NOTHING, verbose_name='Autor')
     animal = models.CharField(max_length=8, choices=ANIMAL_CHOICES, default='Perro')
     genero = models.CharField(max_length=6, choices=GENERO_CHOICES, default='Macho')
@@ -64,9 +64,25 @@ class Articulo(models.Model):
         super().save(*args, **kwargs)
         if self.thumbnail :
             img = Image.open(self.thumbnail.path)
+            imga  =ImageOps.exif_transpose(img)
             max_size = (200, 200)
-            img.thumbnail(max_size)
-            img.save(self.thumbnail.path)
+            imga.thumbnail(max_size)
+            imga.save(self.thumbnail.path)
+            img1 = Image.open(self.image.path)
+            imga2 = ImageOps.exif_transpose(img1)
+            max_size = (1000, 700)
+            imga2.thumbnail(max_size)
+            imga2.save(self.image.path)
+            img2 = Image.open(self.image1.path)
+            imga3 =ImageOps.exif_transpose(img2)
+            max_size = (1000, 700)
+            imga3.thumbnail(max_size)
+            imga3.save(self.image1.path)
+            img3 = Image.open(self.image2.path)
+            imga4 =ImageOps.exif_transpose(img3)
+            max_size = (1000, 700)
+            imga4.thumbnail(max_size)
+            imga4.save(self.image2.path)
 
         
 
