@@ -16,51 +16,15 @@
     {% csrf_token%}
     {{form.as_p}}
     <input class="btn btn-primary" type="submit" value="Enviar">
-    <div id="spinner">
-      <div class="loader">
-        <div class="dog">
-        <div class="dog-body">
-          <div class="dog-tail">
-            <div class="dog-tail">
-              <div class="dog-tail">
-                <div class="dog-tail">
-                  <div class="dog-tail">
-                    <div class="dog-tail">
-                      <div class="dog-tail">
-                        <div class="dog-tail"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="dog-torso"></div>
-        <div class="dog-head">
-          <div class="dog-ears">
-            <div class="dog-ear"></div>
-            <div class="dog-ear"></div>
-          </div>
-          <div class="dog-eyes">
-            <div class="dog-eye"></div>
-            <div class="dog-eye"></div>
-          </div>
-          <div class="dog-muzzle">
-            <div class="dog-tongue"></div>
-          </div>
-        </div>
-      </div>
-      <div class="texto">
-        <p class="pcontenedor">Cargando...</p>
-      </div>
-    </div>
-  </div>
   </form>
 </div>
 <script>
+  document.querySelector(".loader").style.display="none";
   document.getElementById("formulario").addEventListener("submit", function() {
-    document.getElementById("loader").style.display = "none";
+    document.querySelector(".loader").style.display="flex";
   });
 </script>
 {% endblock %}
+{% block Cargando %}
+      <p class="pcontenedor">Cargando Imagenes...</p>
+      {% endblock Cargando %}
