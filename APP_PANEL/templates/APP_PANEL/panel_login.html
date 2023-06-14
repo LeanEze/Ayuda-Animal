@@ -12,18 +12,29 @@
 
   <div class="form2">
 
-    <form action="" method="POST">{% csrf_token %}
+    <form  method="POST">{% csrf_token %}
       <ul>
         <table>
           {{form.as_table}}
         </table>
+        <button type="button" class="botoncito" id="toggleButton" onclick="togglePasswordVisibility()">Mostrar contraseña</button>
         <button class="btn btn-primary botoningresar" type="submit">Entrar</button>
       </ul>
 
-  </div>
-  </form>
+    </div>
+   </form>
 </div>
+<script>
+  function togglePasswordVisibility() {
+    var passwordInput = document.getElementById("id_password");
+    
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      document.getElementById("toggleButton").textContent = "Ocultar contraseña";
+    } else {
+      passwordInput.type = "password";
+      document.getElementById("toggleButton").textContent = "Mostrar contraseña";
+    }
+  }
+</script>
 {% endblock %}
-{% block Cargando %}
-      <p class="pcontenedor">Cargando...</p>
-      {% endblock Cargando %}

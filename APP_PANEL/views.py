@@ -16,7 +16,6 @@ from .filters import ListingFilter
 
 
 
-
 @login_required
 def dummy(request):
     render(request, "")
@@ -41,7 +40,7 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
     fields = ['title' ,'content', 'author', 'is_headline','thumbnail','image', 'image1', 'image2','animal','genero','size','age','date_published']
     template_name = "APP_PANEL/article_form.html"
     success_url = reverse_lazy("adopcion")
-    
+
 
 
 class ArticleUpdateView(LoginRequiredMixin, BaseView, UpdateView):
