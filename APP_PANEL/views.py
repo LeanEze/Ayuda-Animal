@@ -34,12 +34,32 @@ class PanelView(LoginRequiredMixin, BaseView, ListView):
             }
         return render(request,'APP_PANEL/article_list.html', context)
 
-
+from PIL import Image, ImageOps
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Articulo
     fields = ['title' ,'content', 'author', 'is_headline','thumbnail','image', 'image1', 'image2','animal','genero','size','age','date_published']
     template_name = "APP_PANEL/article_form.html"
     success_url = reverse_lazy("adopcion")
+    def form_valid(self, form):
+        thumbnail = form.cleaned_data['thumbnail']
+        image = form.cleaned_data['image']
+        image1 = form.cleaned_data['image1']
+        image2 = form.cleaned_data['image2']
+        # Validar el tamaño de la imagen
+        if image.size > 2 * 1024 * 1024:  # 2 MB
+            form.add_error('image', 'La imagen debe tener un tamaño máximo de 2MB.')
+            return self.form_invalid(form)
+        if image1.size > 2 * 1024 * 1024:  # 2 MB
+            form.add_error('image1', 'La imagen debe tener un tamaño máximo de 2MB.')
+            return self.form_invalid(form)
+        if image2.size > 2 * 1024 * 1024:  # 2 MB
+            form.add_error('image2', 'La imagen debe tener un tamaño máximo de 2MB.')
+            return self.form_invalid(form)
+        if thumbnail.size > 2 * 1024 * 1024:  # 2 MB
+            form.add_error('thumbnail', 'La imagen debe tener un tamaño máximo de 2MB.')
+            return self.form_invalid(form)
+        # Redimensionar la imagen si es necesario
+        return super().form_valid(form)
 
 
 
