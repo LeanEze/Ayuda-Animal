@@ -39,6 +39,7 @@ class BaseView(View):
         context['portal'] = Portal.objects.order_by('date_updated').first()
         return context    
 
+#Muestra template de error 404
 def error_404_view(request, exception):
    
     # we add the path to the 404.html file

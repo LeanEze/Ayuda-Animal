@@ -13,7 +13,7 @@ from APP.models import Articulo, Publicador, Portal
 from APP.views import BaseView
 from APP_PANEL.forms import CustomAuthenticationForm
 from .filters import ListingFilter
-
+from PIL import Image, ImageOps
 
 
 @login_required
@@ -34,7 +34,7 @@ class PanelView(LoginRequiredMixin, BaseView, ListView):
             }
         return render(request,'APP_PANEL/article_list.html', context)
 
-from PIL import Image, ImageOps
+
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Articulo
     fields = ['title' ,'content', 'author', 'is_headline','thumbnail','image', 'image1', 'image2','animal','genero','size','age','date_published']
@@ -60,6 +60,7 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
             return self.form_invalid(form)
         # Redimensionar la imagen si es necesario
         return super().form_valid(form)
+
 
 
 
@@ -124,10 +125,12 @@ def adopcion(request):
 def mostrar_login(request):
     return render(request, "APP_PANEL/panel_login.html", {})
 
-#Muestra articulos en el template
+#Muestra articulos seleccionado en adopcion y lo muestra en template detalles
 class ArticleDetailView(DetailView):
-
+    
+    #indica el model a utilizar
     model = Articulo
+    #indica el template a mostrar
     template_name ="APP_PANEL/article_detail.html"
     
 

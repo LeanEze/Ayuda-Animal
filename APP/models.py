@@ -7,7 +7,7 @@ from datetime import datetime
 from PIL import Image, ImageOps
 
 
-
+#definicion de usuario con permiso a edicion
 class Publicador(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     avatar = models.ImageField(upload_to="avatars", null=True, blank=True)
@@ -17,23 +17,27 @@ class Publicador(models.Model):
     def __str__(self):
         return f"{self.user.username}"
 
-
+#definicion de filtros
+#Filtros por genero del animal
 GENERO_CHOICES = (
     ('macho','Macho'),
     ('hembra', 'Hembra'),
 )
 
+
+#Filtro por tamaño del animal
 SIZE_CHOICES = (
     ('chico','Chico hasta 10kg'),
     ('mediano', 'Mediano entre 10kg/20kg'),
     ('grande', 'Grande +20kg')
 )
-
+#Filtro por edad del animal
 AGE_CHOICES = (
     ('cachorro','Cachorro'),
     ('adulto', 'Adulto')
 )
 
+#Filtro por tipo de animal
 ANIMAL_CHOICES = (
     ('perro','Perro'),
     ('gato', 'Gato'),
@@ -41,7 +45,7 @@ ANIMAL_CHOICES = (
 )
 
 
-
+#definicion del contenido del articulo
 class Articulo(models.Model):
     title = models.CharField(max_length=100, verbose_name='Titulo')
     short_content = models.CharField(max_length=180)

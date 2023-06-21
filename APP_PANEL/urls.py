@@ -12,17 +12,25 @@ urlpatterns = [
     #Edicion Staff
     
     path('panel/', PanelView.as_view(), name='panel-page'),
+    #crear articulo
     path('article/create', ArticleCreateView.as_view(), name ="article-create" ),
+    #editar articulo
     path('article/<pk>/update', ArticleUpdateView.as_view(), name ="article-update" ),
+    #eliminar articulo
     path('article/<pk>/delete', ArticleDeleteView.as_view(), name ="article-delete" ),
+    #detalles del articulo
     path(r'^articleDetail/(?P<pk>\d+)$', ArticleDetailView.as_view(), name='article-detail'),
+    #iniciar sesion
     path("login/", PanelLogin.as_view(), name="panel-login"),
+    #cerrar sesion
     path("logout/", PanelLogout.as_view(), name="panel-logout"),
+    
     path("signup/", SignUpView.as_view(), name="panel-signup"),
     path('dummy', dummy, name="dummy"),
     path("user/<pk>", UserProfile.as_view(), name="user-detail"),
     path("user/<pk>/edit", UserUpdate.as_view(), name="user-update"),
     path('ckeditor/', include('ckeditor_uploader.urls')),    
+    
     path('adopcion/', views.adopcion, name='adopcion'),
     ]
 

@@ -90,9 +90,9 @@ WSGI_APPLICATION = 'MTV.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ayudaanimaldb',
+        'NAME': 'DB',
         'USER': 'postgres',
-        'PASSWORD': 'Leona2022.',
+        'PASSWORD': 'leopaternal93',
         'HOST': 'localhost', 
         'DATABASE_PORT': '5432'
     }
